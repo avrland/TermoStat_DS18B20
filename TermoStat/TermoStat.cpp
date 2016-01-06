@@ -38,8 +38,10 @@ int main(cli::array<System::String ^> ^args)
 
 //pobieranie i otwieranie pliku
 System::Void Form1::button1_Click(System::Object^  sender, System::EventArgs^  e) {
-				Form2^ rgForm = gcnew Form2();
+		
 				rgForm->Show();
+				rgForm->Refresh(); //potrzebne aby labele nie by³y bia³e
+				//Sleep(1000);
 				//############################## <Nie tycaæ, dzia³a!>####################################################//
 		     	String^ adres_logow = textBox1->Text;
                 marshal_context context;
@@ -57,7 +59,6 @@ System::Void Form1::button1_Click(System::Object^  sender, System::EventArgs^  e
 				 switch (hr)
 				{
 					case S_OK:
-					rgForm->Hide();
 					button3->Enabled = true;
 					//MessageBox::Show("Plik pobrany!", "OK!", MessageBoxButtons::OK, MessageBoxIcon::Information);
 					label6->ForeColor = Color::Green;
@@ -69,6 +70,7 @@ System::Void Form1::button1_Click(System::Object^  sender, System::EventArgs^  e
 					break;
 				}
 				//############################## </Nie tycaæ, dzia³a!> ####################################################//
+				rgForm->Hide();
 }
 
 //czyszczenie wykresu
@@ -78,6 +80,7 @@ System::Void Form1::button2_Click(System::Object^  sender, System::EventArgs^  e
 		label6->ForeColor = Color::Blue;
 	    label6->Text = "Wyczyszczono wykres.";
 	    label1->Visible = true;
+		//rgForm->Show();
 }
 
 //³adowanie wykresu

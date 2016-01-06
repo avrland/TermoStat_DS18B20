@@ -37,7 +37,7 @@ namespace TermoStat {
 
 	public ref class Form1 : public System::Windows::Forms::Form
 	{
-
+	Form2^ rgForm = gcnew Form2();
 	String^ strfilename;
 	public:
 
