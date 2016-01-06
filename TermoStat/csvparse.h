@@ -39,8 +39,7 @@ struct wynik {
 	bool koniec_pliku;
 	public class csvparse {
 
-	FILE* plik;
-	fstream t;
+	fstream t; //obiekt do odczytu pliku
 
 public:
 	
@@ -49,15 +48,10 @@ public:
 	}
 
 	void otworz_plik(char* sciezka){
-		//String^ odczyt = Form1::textBox2->Text;
-		//IntPtr ptrToNativeString = Marshal::StringToHGlobalAnsi(odczyt);
-      //  char* nativeString = static_cast<char*>(ptrToNativeString.ToPointer());
 		t.open(sciezka);
-	  //  MessageBox::Show("Plik otwarty!", "OK!", MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
 	}
     void zamknij_plik(void){
 		t.close();
-	   // MessageBox::Show("Plik zamkniêty!", "OK!", MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
 	}
 	wynik tekst(void){
 	     char znak;
@@ -70,16 +64,16 @@ public:
 		 POMIAR.temperatura = 0;
 
 		 string str_rok, str_mies, str_dzien, str_godz, str_min, str_temp;
-		for(int i=0; i<4; i++){
+		for(int i=0; i<4; i++){ //przeczytaj rok z linijki
 			 t.get(znak);
-			 if(t.eof()) return POMIAR;
+			 if(t.eof()) return POMIAR; //jesli koniec pliku, zwróc strukture z samymi zerami
 			 str_rok += znak;
 		 }
 
 		 String^ str2 = gcnew String(str_rok.c_str());
 		 POMIAR.rok = Convert::ToInt32(str2);
 
-		 for(int i=0; i<2; i++){
+		 for(int i=0; i<2; i++){ //przeczytaj miesiac z badanej linijki
 			 t.get(znak);
 			 str_mies += znak;
 		 }
@@ -87,7 +81,7 @@ public:
 		 POMIAR.miesiac = Convert::ToInt32(str2);
 
 
-		 for(int i=0; i<2; i++){
+		 for(int i=0; i<2; i++){ //przeczytaj dzien z badanej linijki
 			 t.get(znak);
 			 str_dzien += znak;
 		 }
@@ -95,7 +89,7 @@ public:
 		 POMIAR.dzien = Convert::ToInt32(str2);
 
 
-		 for(int i=0; i<2; i++){
+		 for(int i=0; i<2; i++){ //przeczytaj godzine z badanej linijki
 			 t.get(znak);
 			 str_godz += znak;
 		 }
@@ -103,7 +97,7 @@ public:
 		 POMIAR.godzina = Convert::ToInt32(str2);
 
 
-		 for(int i=0; i<2; i++){
+		 for(int i=0; i<2; i++){ //przeczytaj minute z badanej linijki
 			 t.get(znak);
 			 str_min += znak;
 		 }
@@ -111,15 +105,12 @@ public:
 		 POMIAR.minuta = Convert::ToInt32(str2);
      
 
-		 while(1){
+		 while(1){ //przeczytaj temperature z badanej linijki
 			 t.get(znak);
-			 if(znak=='\n') break;
+			 if(znak=='\n') break; //jesli koniec linii przestan czytac
 			 str_temp += znak;
 		 }
-		 //str2 = gcnew String(str_temp.c_str());
-		 POMIAR.temperatura = ::atof(str_temp.c_str());
-
-		// KONIEC:
+		 POMIAR.temperatura = ::atof(str_temp.c_str()); //przerob string na floata
 	     return POMIAR;
 	}
 

@@ -95,8 +95,8 @@ namespace TermoStat {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Series^  series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
 			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -120,55 +120,54 @@ namespace TermoStat {
 			this->chart1->BackColor = System::Drawing::Color::Transparent;
 			this->chart1->BorderlineColor = System::Drawing::Color::Transparent;
 			this->chart1->BorderSkin->BackColor = System::Drawing::Color::Transparent;
-			chartArea1->AxisX->Interval = 6;
-			chartArea1->AxisX->IntervalAutoMode = System::Windows::Forms::DataVisualization::Charting::IntervalAutoMode::VariableCount;
-			chartArea1->AxisX->IntervalOffsetType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Hours;
-			chartArea1->AxisX->IntervalType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Hours;
-			chartArea1->AxisX->LabelStyle->Format = L"d.M.20y";
-			chartArea1->AxisX->LabelStyle->Interval = 24;
-			chartArea1->AxisX->LabelStyle->IntervalOffset = 0;
-			chartArea1->AxisX->LabelStyle->IntervalOffsetType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Days;
-			chartArea1->AxisX->LabelStyle->IntervalType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Hours;
-			chartArea1->AxisX->LabelStyle->IsEndLabelVisible = false;
-			chartArea1->AxisX2->Interval = 1;
-			chartArea1->AxisX2->IntervalAutoMode = System::Windows::Forms::DataVisualization::Charting::IntervalAutoMode::VariableCount;
-			chartArea1->AxisX2->IntervalOffset = 1;
-			chartArea1->AxisX2->IntervalOffsetType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Days;
-			chartArea1->AxisX2->IntervalType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Days;
-			chartArea1->AxisX2->IsMarginVisible = false;
-			chartArea1->AxisX2->LabelStyle->Format = L"D.M";
-			chartArea1->AxisX2->LabelStyle->Interval = 1;
-			chartArea1->AxisX2->LabelStyle->IntervalOffset = 1;
-			chartArea1->AxisX2->LabelStyle->IntervalOffsetType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Days;
-			chartArea1->AxisX2->LabelStyle->IntervalType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Days;
-			chartArea1->AxisX2->LabelStyle->IsEndLabelVisible = false;
-			chartArea1->CursorX->Interval = 12;
-			chartArea1->CursorX->IntervalOffsetType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Hours;
-			chartArea1->CursorX->IntervalType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Hours;
-			chartArea1->CursorX->IsUserEnabled = true;
-			chartArea1->CursorX->IsUserSelectionEnabled = true;
-			chartArea1->CursorY->IntervalOffsetType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Hours;
-			chartArea1->CursorY->IntervalType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Hours;
-			chartArea1->Name = L"ChartArea1";
-			this->chart1->ChartAreas->Add(chartArea1);
+			chartArea3->AxisX->Interval = 6;
+			chartArea3->AxisX->IntervalAutoMode = System::Windows::Forms::DataVisualization::Charting::IntervalAutoMode::VariableCount;
+			chartArea3->AxisX->IntervalOffsetType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Hours;
+			chartArea3->AxisX->IntervalType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Hours;
+			chartArea3->AxisX->LabelStyle->Format = L"d.M.20y";
+			chartArea3->AxisX->LabelStyle->Interval = 24;
+			chartArea3->AxisX->LabelStyle->IntervalOffset = 0;
+			chartArea3->AxisX->LabelStyle->IntervalOffsetType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Days;
+			chartArea3->AxisX->LabelStyle->IntervalType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Hours;
+			chartArea3->AxisX->LabelStyle->IsEndLabelVisible = false;
+			chartArea3->AxisX2->Interval = 1;
+			chartArea3->AxisX2->IntervalAutoMode = System::Windows::Forms::DataVisualization::Charting::IntervalAutoMode::VariableCount;
+			chartArea3->AxisX2->IntervalOffset = 1;
+			chartArea3->AxisX2->IntervalOffsetType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Days;
+			chartArea3->AxisX2->IntervalType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Days;
+			chartArea3->AxisX2->IsMarginVisible = false;
+			chartArea3->AxisX2->LabelStyle->Format = L"D.M";
+			chartArea3->AxisX2->LabelStyle->Interval = 1;
+			chartArea3->AxisX2->LabelStyle->IntervalOffset = 1;
+			chartArea3->AxisX2->LabelStyle->IntervalOffsetType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Days;
+			chartArea3->AxisX2->LabelStyle->IntervalType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Days;
+			chartArea3->AxisX2->LabelStyle->IsEndLabelVisible = false;
+			chartArea3->CursorX->Interval = 12;
+			chartArea3->CursorX->IntervalOffsetType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Hours;
+			chartArea3->CursorX->IntervalType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Hours;
+			chartArea3->CursorX->IsUserEnabled = true;
+			chartArea3->CursorX->IsUserSelectionEnabled = true;
+			chartArea3->CursorY->IntervalOffsetType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Hours;
+			chartArea3->CursorY->IntervalType = System::Windows::Forms::DataVisualization::Charting::DateTimeIntervalType::Hours;
+			chartArea3->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea3);
 			this->chart1->Location = System::Drawing::Point(-31, -8);
 			this->chart1->Margin = System::Windows::Forms::Padding(1);
 			this->chart1->Name = L"chart1";
 			this->chart1->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::None;
-			series1->BorderColor = System::Drawing::Color::Transparent;
-			series1->ChartArea = L"ChartArea1";
-			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
-			series1->EmptyPointStyle->Label = L"Brak danych.";
-			series1->EmptyPointStyle->Name = L"Brak danych.";
-			series1->MarkerBorderColor = System::Drawing::Color::Lime;
-			series1->Name = L"Series1";
-			series1->XValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::DateTime;
-			series1->YValuesPerPoint = 10;
-			this->chart1->Series->Add(series1);
+			series3->BorderColor = System::Drawing::Color::Transparent;
+			series3->ChartArea = L"ChartArea1";
+			series3->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+			series3->EmptyPointStyle->Label = L"Brak danych.";
+			series3->EmptyPointStyle->Name = L"Brak danych.";
+			series3->MarkerBorderColor = System::Drawing::Color::Lime;
+			series3->Name = L"Series1";
+			series3->XValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::DateTime;
+			series3->YValuesPerPoint = 10;
+			this->chart1->Series->Add(series3);
 			this->chart1->Size = System::Drawing::Size(949, 331);
 			this->chart1->TabIndex = 0;
 			this->chart1->Text = L"chart1";
-			this->chart1->Click += gcnew System::EventHandler(this, &Form1::chart1_Click);
 			// 
 			// button1
 			// 
@@ -238,7 +237,7 @@ namespace TermoStat {
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
 			this->label6->ForeColor = System::Drawing::Color::Blue;
-			this->label6->Location = System::Drawing::Point(269, 373);
+			this->label6->Location = System::Drawing::Point(245, 373);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(143, 16);
 			this->label6->TabIndex = 14;
@@ -257,7 +256,6 @@ namespace TermoStat {
 			this->textBox2->Size = System::Drawing::Size(236, 20);
 			this->textBox2->TabIndex = 19;
 			this->textBox2->Text = L"C:\\Users\\Marcin\\temp_termostat.log";
-			this->textBox2->TextChanged += gcnew System::EventHandler(this, &Form1::textBox2_TextChanged);
 			// 
 			// button5
 			// 
@@ -289,7 +287,6 @@ namespace TermoStat {
 			this->label2->Size = System::Drawing::Size(179, 13);
 			this->label2->TabIndex = 22;
 			this->label2->Text = L"Wykona³: Marcin Popko EiT III sem.";
-			this->label2->Click += gcnew System::EventHandler(this, &Form1::label2_Click);
 			// 
 			// label3
 			// 
@@ -322,7 +319,6 @@ namespace TermoStat {
 			this->Controls->Add(this->chart1);
 			this->Name = L"Form1";
 			this->Text = L"TermoStat";
-			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -333,17 +329,7 @@ namespace TermoStat {
 	public: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e);
 	public: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e);
     public: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e);
-
-private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e);
-private: System::Void textBox2_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-
-		 }
-private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void chart1_Click(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void label2_Click(System::Object^  sender, System::EventArgs^  e) {
-}
+	private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e);
 };
 }
 

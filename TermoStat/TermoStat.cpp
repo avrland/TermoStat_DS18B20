@@ -113,7 +113,7 @@ System::Void Form1::button3_Click(System::Object^  sender, System::EventArgs^  e
 
 	double mn = pomiar[0];
 	double mx = pomiar[0];
-	for(int i=1;i<liczba_pomiarow;i++){
+	for(int i=1;i<liczba_pomiarow;i++){ //znajdx minimalny i maksymalny element tablicy pomiar[]
 		if(mn>pomiar[i]){
 			mn=pomiar[i];
 			minimalne = baza[i];
@@ -123,18 +123,18 @@ System::Void Form1::button3_Click(System::Object^  sender, System::EventArgs^  e
 			mx = pomiar[i];
 		}
 	}
+
+	//wrzuæ dane do listboxa
 	String^ data_poczatkowa = baza[0].dzien + "." + baza[0].miesiac + "." + baza[0].rok + "r. " + baza[0].godzina + ":" + baza[0].minuta;
 	String^ data_koncowa = baza[liczba_pomiarow - 2].dzien + "." + baza[liczba_pomiarow - 2].miesiac + "." + baza[liczba_pomiarow - 2].rok + "r. " + baza[liczba_pomiarow - 2].godzina + ":" + baza[liczba_pomiarow - 2].minuta;
-	//listBox2->MultiColumn
 	listBox2->Items->Add("Od " + data_poczatkowa + "  do  " + data_koncowa);
 	listBox2->Items->Add("Max: " + Convert::ToString(mx) + "°C" + " Dnia: " + maksymalne.dzien + "." + maksymalne.miesiac + "." + maksymalne.rok + "  Godz: " + maksymalne.godzina + ":" + maksymalne.minuta);
 	listBox2->Items->Add("Min: " + Convert::ToString(mn) + "°C" + " Dnia: " + minimalne.dzien + "." + minimalne.miesiac + "." + minimalne.rok + "  Godz: " + minimalne.godzina + ":" + minimalne.minuta);
 	srednia = suma/liczba_pomiarow;
     listBox2->Items->Add("Œrednia: " + Convert::ToString(roundf(srednia*100)/100) + "°C");
-	//listBox2->Items->Add("-----------------------------------------------------------------------------------------------------------------");
-	////label1->Text = Convert::ToString(liczba_pomiarow);
-	label1->Visible = false;
-	label6->ForeColor = Color::Green;
+
+	label1->Visible = false; //wy³¹cz napis informuj¹cy o braku danych
+	label6->ForeColor = Color::Green; //wyœwietl zielony napis 
 	label6->Text = "Za³adowano wykres.";
 }
 
@@ -145,5 +145,5 @@ System::Void Form1::button5_Click(System::Object^  sender, System::EventArgs^  e
 	        openFileDialog1 -> ShowDialog();
 			strfilename = openFileDialog1->InitialDirectory + openFileDialog1->FileName;
 			textBox2->Text = strfilename;
-			button1->Enabled = true;
+			button1->Enabled = true; //odblokuj przycisk do pobrania logow;
 }
