@@ -38,7 +38,7 @@ int main(cli::array<System::String ^> ^args)
 
 //pobieranie i otwieranie pliku
 System::Void Form1::button1_Click(System::Object^  sender, System::EventArgs^  e) {
-		
+	            Form2^ rgForm = gcnew Form2();
 				rgForm->Show();
 				rgForm->Refresh(); //potrzebne aby labele nie by³y bia³e
 				//Sleep(1000);
@@ -80,22 +80,27 @@ System::Void Form1::button2_Click(System::Object^  sender, System::EventArgs^  e
 		label6->ForeColor = Color::Blue;
 	    label6->Text = "Wyczyszczono wykres.";
 	    label1->Visible = true;
-		//rgForm->Show();
 }
 
 //³adowanie wykresu
 System::Void Form1::button3_Click(System::Object^  sender, System::EventArgs^  e) {
-	int liczba_pomiarow;
-	double pomiar[1000], suma;
-	float srednia;
-	wynik ODCZYT;
+	int liczba_pomiarow=0;
+	double pomiar[1000], suma=0;
+	double srednia;
+	wynik ODCZYT, maksymalne, minimalne;
+	wynik baza[1000];
+
+	//pobieram œcie¿kê do pliku, zamieniam pojedynczy slash na podwójny, otwieram plik
 	String^ odczyt = Form1::textBox2->Text;
 	odczyt = odczyt->Replace("\\", "\\\\");
     IntPtr ptrToNativeString = Marshal::StringToHGlobalAnsi(odczyt);
     char* nativeString = static_cast<char*>(ptrToNativeString.ToPointer());
 	klasa.otworz_plik(nativeString);
+	//
+
      while(1){
 			ODCZYT = klasa.tekst();
+			baza[liczba_pomiarow] = klasa.tekst();
 		  	if(ODCZYT.rok == 0) break;
 			DateTime czas = DateTime(ODCZYT.rok, ODCZYT.miesiac, ODCZYT.dzien, ODCZYT.godzina, ODCZYT.minuta, 00);
 		    this->chart1->Series["Series1"]->Points->AddXY(czas, ODCZYT.temperatura);
@@ -108,22 +113,24 @@ System::Void Form1::button3_Click(System::Object^  sender, System::EventArgs^  e
 
 	double mn = pomiar[0];
 	double mx = pomiar[0];
-	for(int i=1;i<liczba_pomiarow;i++)
-	{
-		if(mn>pomiar[i])
-		{
+	for(int i=1;i<liczba_pomiarow;i++){
+		if(mn>pomiar[i]){
 			mn=pomiar[i];
+			minimalne = baza[i];
 		}
-		else if(mx<pomiar[i])
-		{
+		else if(mx<pomiar[i]){
+			maksymalne = baza[i];
 			mx = pomiar[i];
 		}
 	}
-	listBox2->Items->Add("Od DD.MM.YYYY do DD.MM.YYYY");
-    listBox2->Items->Add("Max: " + Convert::ToString(mx) + "°C" + " Dnia:  " + "Godz:  ");
-	listBox2->Items->Add("Min: " + Convert::ToString(mn) + "°C" + " Dnia:  " + "Godz:  ");
+	String^ data_poczatkowa = baza[0].dzien + "." + baza[0].miesiac + "." + baza[0].rok + "r. " + baza[0].godzina + ":" + baza[0].minuta;
+	String^ data_koncowa = baza[liczba_pomiarow - 2].dzien + "." + baza[liczba_pomiarow - 2].miesiac + "." + baza[liczba_pomiarow - 2].rok + "r. " + baza[liczba_pomiarow - 2].godzina + ":" + baza[liczba_pomiarow - 2].minuta;
+	//listBox2->MultiColumn
+	listBox2->Items->Add("Od " + data_poczatkowa + "  do  " + data_koncowa);
+	listBox2->Items->Add("Max: " + Convert::ToString(mx) + "°C" + " Dnia: " + maksymalne.dzien + "." + maksymalne.miesiac + "." + maksymalne.rok + "  Godz: " + maksymalne.godzina + ":" + maksymalne.minuta);
+	listBox2->Items->Add("Min: " + Convert::ToString(mn) + "°C" + " Dnia: " + minimalne.dzien + "." + minimalne.miesiac + "." + minimalne.rok + "  Godz: " + minimalne.godzina + ":" + minimalne.minuta);
 	srednia = suma/liczba_pomiarow;
-    listBox2->Items->Add("Œrednia: " + Convert::ToString(srednia) + "°C");
+    listBox2->Items->Add("Œrednia: " + Convert::ToString(roundf(srednia*100)/100) + "°C");
 	//listBox2->Items->Add("-----------------------------------------------------------------------------------------------------------------");
 	////label1->Text = Convert::ToString(liczba_pomiarow);
 	label1->Visible = false;
@@ -138,4 +145,5 @@ System::Void Form1::button5_Click(System::Object^  sender, System::EventArgs^  e
 	        openFileDialog1 -> ShowDialog();
 			strfilename = openFileDialog1->InitialDirectory + openFileDialog1->FileName;
 			textBox2->Text = strfilename;
+			button1->Enabled = true;
 }

@@ -120,6 +120,18 @@
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>153, 17</value>
   </metadata>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Wybierz konkretną ścieżkę 
+(z nazwą pliku) do pobrania 
+logów temperatury, potem 
+wybierz adres z którego ma
+ być pobrany log.  
+"Załaduj wykres" wyświetli jego
+zawartość i pokaże zakres dat,
+maksymalną, minimalną oraz
+średnią temperaturę.
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>29</value>
   </metadata>

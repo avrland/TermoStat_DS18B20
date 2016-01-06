@@ -37,7 +37,6 @@ namespace TermoStat {
 
 	public ref class Form1 : public System::Windows::Forms::Form
 	{
-	Form2^ rgForm = gcnew Form2();
 	String^ strfilename;
 	public:
 
@@ -77,6 +76,7 @@ namespace TermoStat {
 	private: System::Windows::Forms::Button^  button5;
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Label^  label2;
+	private: System::Windows::Forms::Label^  label3;
 
 
 
@@ -97,6 +97,7 @@ namespace TermoStat {
 		{
 			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Series^  series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
 			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
@@ -110,6 +111,7 @@ namespace TermoStat {
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -170,7 +172,8 @@ namespace TermoStat {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(258, 345);
+			this->button1->Enabled = false;
+			this->button1->Location = System::Drawing::Point(428, 342);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(111, 23);
 			this->button1->TabIndex = 1;
@@ -180,7 +183,7 @@ namespace TermoStat {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(16, 345);
+			this->textBox1->Location = System::Drawing::Point(186, 344);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(236, 20);
 			this->textBox1->TabIndex = 2;
@@ -188,7 +191,7 @@ namespace TermoStat {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(258, 403);
+			this->button2->Location = System::Drawing::Point(428, 397);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(111, 23);
 			this->button2->TabIndex = 4;
@@ -199,7 +202,7 @@ namespace TermoStat {
 			// button3
 			// 
 			this->button3->Enabled = false;
-			this->button3->Location = System::Drawing::Point(258, 374);
+			this->button3->Location = System::Drawing::Point(428, 370);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(111, 23);
 			this->button3->TabIndex = 5;
@@ -213,16 +216,17 @@ namespace TermoStat {
 				static_cast<System::Byte>(238)));
 			this->listBox2->FormattingEnabled = true;
 			this->listBox2->ItemHeight = 20;
-			this->listBox2->Location = System::Drawing::Point(375, 316);
+			this->listBox2->Location = System::Drawing::Point(545, 316);
+			this->listBox2->MultiColumn = true;
 			this->listBox2->Name = L"listBox2";
-			this->listBox2->Size = System::Drawing::Size(509, 104);
+			this->listBox2->Size = System::Drawing::Size(339, 104);
 			this->listBox2->TabIndex = 12;
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F));
-			this->label5->Location = System::Drawing::Point(13, 377);
+			this->label5->Location = System::Drawing::Point(183, 373);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(38, 16);
 			this->label5->TabIndex = 13;
@@ -234,7 +238,7 @@ namespace TermoStat {
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
 			this->label6->ForeColor = System::Drawing::Color::Blue;
-			this->label6->Location = System::Drawing::Point(57, 377);
+			this->label6->Location = System::Drawing::Point(269, 373);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(143, 16);
 			this->label6->TabIndex = 14;
@@ -248,7 +252,7 @@ namespace TermoStat {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(16, 318);
+			this->textBox2->Location = System::Drawing::Point(186, 317);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(236, 20);
 			this->textBox2->TabIndex = 19;
@@ -257,7 +261,7 @@ namespace TermoStat {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(258, 316);
+			this->button5->Location = System::Drawing::Point(428, 315);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(111, 23);
 			this->button5->TabIndex = 20;
@@ -280,18 +284,30 @@ namespace TermoStat {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(13, 408);
+			this->label2->Location = System::Drawing::Point(183, 402);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(179, 13);
 			this->label2->TabIndex = 22;
 			this->label2->Text = L"Wykona³: Marcin Popko EiT III sem.";
 			this->label2->Click += gcnew System::EventHandler(this, &Form1::label2_Click);
 			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label3->Location = System::Drawing::Point(12, 312);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(157, 117);
+			this->label3->TabIndex = 23;
+			this->label3->Text = resources->GetString(L"label3.Text");
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(896, 438);
+			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button5);
