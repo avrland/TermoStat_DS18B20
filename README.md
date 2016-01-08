@@ -1,4 +1,7 @@
 # TermoStat_DS18B20
+
+<img src="http://vps.avrland.ovh/obrazki/wykres_zaladowany.PNG"/>
+
 Analizator zapisów temperatur z zewnętrznego urządzenia. Napisany w Visual Studio 2015, wymaga .NET 4.5.2. 
 Pobiera plik tesktowy z serwera, wyswielta jego zawartosc na wykresie oraz znajduje zakres czasowy pomiaru, maksymalna, 
 minimalna oraz srednia temperature. Skompilowany .exe znajduje sie w folderze Debug.
