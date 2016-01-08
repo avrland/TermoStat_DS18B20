@@ -41,8 +41,6 @@ System::Void Form1::button1_Click(System::Object^  sender, System::EventArgs^  e
 	            Form2^ rgForm = gcnew Form2();
 				rgForm->Show();
 				rgForm->Refresh(); //potrzebne aby labele nie by³y bia³e
-				//Sleep(1000);
-				//############################## <Nie tycaæ, dzia³a!>####################################################//
 		     	String^ adres_logow = textBox1->Text;
                 marshal_context context;
                 string adres1 = context.marshal_as<std::string>(adres_logow);
@@ -60,16 +58,15 @@ System::Void Form1::button1_Click(System::Object^  sender, System::EventArgs^  e
 				{
 					case S_OK:
 					button3->Enabled = true;
-					//MessageBox::Show("Plik pobrany!", "OK!", MessageBoxButtons::OK, MessageBoxIcon::Information);
 					label6->ForeColor = Color::Green;
 				    label6->Text = "Pobrano logi.";
 					break;
 					default:
 					//rgForm->Hide();
-					MessageBox::Show("B³êdny adres/problem z po³¹czeniem.", "B³¹d", MessageBoxButtons::OK, MessageBoxIcon::Error);
+					MessageBox::Show("B³êdny adres/problem z po³¹czeniem.", "B³¹d", 
+						MessageBoxButtons::OK, MessageBoxIcon::Error);
 					break;
 				}
-				//############################## </Nie tycaæ, dzia³a!> ####################################################//
 				rgForm->Hide();
 }
 
@@ -102,7 +99,8 @@ System::Void Form1::button3_Click(System::Object^  sender, System::EventArgs^  e
 			ODCZYT = klasa.tekst();
 			baza[liczba_pomiarow] = klasa.tekst();
 		  	if(ODCZYT.rok == 0) break;
-			DateTime czas = DateTime(ODCZYT.rok, ODCZYT.miesiac, ODCZYT.dzien, ODCZYT.godzina, ODCZYT.minuta, 00);
+			DateTime czas = DateTime(ODCZYT.rok, ODCZYT.miesiac, 
+				ODCZYT.dzien, ODCZYT.godzina, ODCZYT.minuta, 00);
 		    this->chart1->Series["Series1"]->Points->AddXY(czas, ODCZYT.temperatura);
 			pomiar[liczba_pomiarow] = ODCZYT.temperatura;
 			suma += ODCZYT.temperatura;
@@ -125,11 +123,18 @@ System::Void Form1::button3_Click(System::Object^  sender, System::EventArgs^  e
 	}
 
 	//wrzuæ dane do listboxa
-	String^ data_poczatkowa = baza[0].dzien + "." + baza[0].miesiac + "." + baza[0].rok + "r. " + baza[0].godzina + ":" + baza[0].minuta;
-	String^ data_koncowa = baza[liczba_pomiarow - 2].dzien + "." + baza[liczba_pomiarow - 2].miesiac + "." + baza[liczba_pomiarow - 2].rok + "r. " + baza[liczba_pomiarow - 2].godzina + ":" + baza[liczba_pomiarow - 2].minuta;
+	String^ data_poczatkowa = baza[0].dzien + "." + baza[0].miesiac + "." + 
+		baza[0].rok + "r. " + baza[0].godzina + ":" + baza[0].minuta;
+	String^ data_koncowa = baza[liczba_pomiarow - 2].dzien + "." + 
+		baza[liczba_pomiarow - 2].miesiac + "." + baza[liczba_pomiarow - 2].rok
+		+ "r. " + baza[liczba_pomiarow - 2].godzina + ":" + baza[liczba_pomiarow - 2].minuta;
 	listBox2->Items->Add("Od " + data_poczatkowa + "  do  " + data_koncowa);
-	listBox2->Items->Add("Max: " + Convert::ToString(mx) + "°C" + " Dnia: " + maksymalne.dzien + "." + maksymalne.miesiac + "." + maksymalne.rok + "  Godz: " + maksymalne.godzina + ":" + maksymalne.minuta);
-	listBox2->Items->Add("Min: " + Convert::ToString(mn) + "°C" + " Dnia: " + minimalne.dzien + "." + minimalne.miesiac + "." + minimalne.rok + "  Godz: " + minimalne.godzina + ":" + minimalne.minuta);
+	listBox2->Items->Add("Max: " + Convert::ToString(mx) + "°C" + " Dnia: "
+		+ maksymalne.dzien + "." + maksymalne.miesiac + "."
+		+ maksymalne.rok + "  Godz: " + maksymalne.godzina + ":" + maksymalne.minuta);
+	listBox2->Items->Add("Min: " + Convert::ToString(mn) + "°C" + " Dnia: " 
+		+ minimalne.dzien + "." + minimalne.miesiac + "." + minimalne.rok
+		+ "  Godz: " + minimalne.godzina + ":" + minimalne.minuta);
 	srednia = suma/liczba_pomiarow;
     listBox2->Items->Add("Œrednia: " + Convert::ToString(roundf(srednia*100)/100) + "°C");
 
@@ -147,3 +152,5 @@ System::Void Form1::button5_Click(System::Object^  sender, System::EventArgs^  e
 			textBox2->Text = strfilename;
 			button1->Enabled = true; //odblokuj przycisk do pobrania logow;
 }
+
+
