@@ -1,10 +1,13 @@
 # TermoStat_DS18B20
-Analizator zapisów temperatur z zewnętrznego urządzenia. 
-
-Napisany w Visual Studio 2015, wymaga .NET 4.5.2. 
-
+Analizator zapisów temperatur z zewnętrznego urządzenia. Napisany w Visual Studio 2015, wymaga .NET 4.5.2. 
 Pobiera plik tesktowy z serwera, wyswielta jego zawartosc na wykresie oraz znajduje zakres czasowy pomiaru, maksymalna, 
-minimalna oraz srednia temperature.
+minimalna oraz srednia temperature. Skompilowany .exe znajduje sie w folderze Debug.
+
+Adres z testowym plikiem logow (bangla szybko):
+http://vps.avrland.ovh/temp.log
+
+Adres z fizycznym aktualizaowanym logiem z Raspberry Pi, może niedomagać, uroki neostrady :(
+http://malina.avrland.ovh:1080/temp.log
 
 Szersza dokumentacja, jak to dziala, etc w ponizszym pdfie:
 http://vps.avrland.ovh/TermoStat.pdf
