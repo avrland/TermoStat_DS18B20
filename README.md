@@ -24,4 +24,4 @@ E-maila: marcinpopko@outlook.com
 Fanpage facebookowy bloga: http://facebook.com/avrland
 
 
-Projekt zostal wykonany na potrzeby zajec z przedmiotu Programowanie w jezykach wysokiego poziomu pod okiem prowadzacego Pawla Myszkowskiego.
+<b> Projekt zostal wykonany na potrzeby zajec z przedmiotu Programowanie w jezykach wysokiego poziomu pod okiem prowadzacego Pawla Myszkowskiego. </b>
