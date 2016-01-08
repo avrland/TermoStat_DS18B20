@@ -10,7 +10,9 @@ Szersza dokumentacja, jak to dziala, etc w ponizszym pdfie:
 http://vps.avrland.ovh/TermoStat.pdf
 
 Dodatkowe pytania co i jak mozecie przesylac na:
+
 E-maila: marcinpopko@outlook.com
+
 Fanpage facebookowy bloga: http://facebook.com/avrland
 
 
