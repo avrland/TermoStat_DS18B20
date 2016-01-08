@@ -6,7 +6,7 @@ minimalna oraz srednia temperature. Skompilowany .exe znajduje sie w folderze De
 Adres z testowym plikiem logow (bangla szybko):
 http://vps.avrland.ovh/temp.log
 
-Adres z fizycznym aktualizaowanym logiem z Raspberry Pi, może niedomagać, uroki neostrady :(
+Adres z fizycznym aktualizaowanym logiem z Raspberry Pi, może niedomagać, cos moj ISP nawala.
 http://malina.avrland.ovh:1080/temp.log
 
 Szersza dokumentacja, jak to dziala, etc w ponizszym pdfie:
