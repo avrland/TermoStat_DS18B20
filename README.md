@@ -2,9 +2,11 @@
 
 <img src="http://vps.avrland.ovh/obrazki/wykres_zaladowany.PNG"/>
 
-Analizator zapisów temperatur z zewnętrznego urządzenia. Napisany w Visual Studio 2015, wymaga .NET 4.5.2. 
-Pobiera plik tesktowy z serwera, wyswielta jego zawartosc na wykresie oraz znajduje zakres czasowy pomiaru, maksymalna, 
-minimalna oraz srednia temperature. Skompilowany .exe znajduje sie w folderze Debug.
+<b> Moja pierwsza appka pod Win32 GUI hurrra! :G </b>
+
+Analizator zapisów temperatur z zewnętrznego urządzenia. Pobiera plik tesktowy z serwera, wyswielta jego zawartosc na wykresie oraz znajduje zakres czasowy pomiaru, maksymalna, minimalna oraz srednia temperature. 
+
+Napisany w Visual Studio 2015, wymaga .NET 4.5.2. Moga wystapic problemy z kompatybilnoscia (do poprawienia toto), u znajomych dzialal ten program wybiorczo, ja przetestowalem na 7/8.1/10 i dzialal. Skompilowany .exe znajduje sie w folderze Debug.
 
 Adres z testowym plikiem logow (bangla szybko):
 http://vps.avrland.ovh/temp.log
