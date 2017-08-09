@@ -1,6 +1,6 @@
 # TermoStat_DS18B20
 
-<img src="http://vps.avrland.ovh/obrazki/wykres_zaladowany.PNG"/>
+<img src="https://raw.githubusercontent.com/avrland/TermoStat_DS18B20/master/12469626_1076290752415670_5861933004548163110_o.png"/>
 
 <b> Moja pierwsza appka pod Win32 GUI hurrra! :G </b>
 
